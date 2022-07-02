@@ -15,7 +15,16 @@ public class GiveHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
+        {
             collision.GetComponent<HealthManager>().HealthPickup(bonusHP);
+            Destroy(gameObject);
+        }
 
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }
