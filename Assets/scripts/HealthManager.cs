@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     const float MAXHEALTH = 100f;
-    float health = 100f;
+    public float health = 100f;
     public Slider healthSlider;
 
     private void Start()
@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
 
     void Die()
     {
-        GetComponent<Test>().enabled = false;
+        GetComponent<CharacterController>().enabled = false;
         GetComponentInChildren<Animator>().SetBool("Dead", true);
     }
 
@@ -34,6 +34,7 @@ public class HealthManager : MonoBehaviour
         }
 
         healthSlider.value = health / MAXHEALTH;
+        GetComponent<AudioSource>().Play();
     }
 
     public void HealthPickup(float amount)
@@ -45,6 +46,7 @@ public class HealthManager : MonoBehaviour
                 health = MAXHEALTH;
         }
 
+        healthSlider.value = health / MAXHEALTH;
     }
 
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class Test : MonoBehaviour
 {
     public float speed;
     public float smooth;
@@ -13,6 +13,8 @@ public class CharacterController : MonoBehaviour
     public Collider2D groundCheck;
     public LayerMask groundLayer;
     Animator anim;
+
+
 
 
     void Start()
@@ -67,6 +69,8 @@ public class CharacterController : MonoBehaviour
 
 
     }
+    
 
+    
 
 }
